@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+            color:blue;
+        }
+        a:hover {
+            cursor: pointer;
+        }
+        #app {
+            width: 350px;
+            border:0.5px solid gray;
+            margin: 0 auto;
+            height: 500px;
+            overflow-y: auto;
+        }
+        #app div::after,#tdList::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #todoContent,.content {
+            float: left;
+            width: 255px;
+        }
+        .content {
+            white-space: nowrap;  
+            overflow: hidden;   
+            text-overflow: ellipsis;    
+        }
+        #addBtn,.removeBtn {
+            float: right;
+            width: 60px;
+        }
+        #tdList,#app div {
+            padding: 0;
+            margin: 5px;
+        }
+        #tdList li {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div>
+            <input type="text" name="todoContent" id="todoContent" />
+            <button id="addBtn">Add</button>
+        </div>
+        <ul id="tdList"></ul>
+    </div>
+    <template id="temp">
+        <li class="todoItem">
+            <span  class="content"></span>
+            <a src = "javascript:void(0)" data-id="" class = "removeBtn">remove</a>
+        </li>
+    </template>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
